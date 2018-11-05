@@ -19,6 +19,18 @@ function merge(arr1, arr2) {
   return sorted;
 }
 
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+
+  let [arr1, arr2] = split(arr);
+  return merge(mergeSort(arr1), mergeSort(arr2))
+}
+
 let test = [1, 2, 4, 8];
 let test2 = [3, 5, 6];
-console.log(merge(test, test2).toString());
+let test3 = [2, 4, 1, 6, 3];
+// console.log(merge(test, test2).toString());
+// console.log(mergeSort(test3).toString());
+mergeSort(test3);
